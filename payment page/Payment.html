@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Fav.png" type="image/x-icon">
+    <title>Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../Main Page/index.html"><img src="../Logo.svg" alt=""></a>
+        </div>
+        <div class="nav-right">
+            <a href="../Main Page/index.html">Home</a>
+            <a href="../payment page/Payment.html">Payment</a>
+            <a href="../About us/about.html">About Us</a>
+            <a href="../Login and SignUp Page/login.html">Sign Up / Login</a>
+        </div>
+    </nav>
+<div id="main">
+    <button onclick="openRazorpay()">Proceed To Pay</button>
+
+<script>
+    function openRazorpay() {
+        var options = {
+            "key": "rzp_test_7yeXPTGTzcuLX9",
+            "amount": "100", 
+            "currency": "INR",
+            "name": "Your Company Name",
+            "description": "Purchase Description",
+            "image": "https://your-company-logo-url.com/logo.png",
+            "handler": function (response) {
+                alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": "Adil Khan",
+                "email": "asilali864@gmail.com",
+                "contact": "8005612907"
+            },
+            "notes": {
+                "address": "Address"
+            },
+            "theme": {
+                "color": "#F37254"
+            }
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+    }
+</script>
+</div>
+
+</body>
+</html>
