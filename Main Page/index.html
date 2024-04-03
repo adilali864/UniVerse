@@ -59,7 +59,7 @@
                             <p>Still using slips for laundry meh, Just digitalize <br>the slip.</p>
                         </div>
                     </div>
-                    <div class="img-holder">
+                    <div class="img-holder" onclick="redirectToBooking()">
                         <img src="../eventbook.png" alt="">
                         <div class="overlay">
                             <h3>Book <br>a seat</h3>
@@ -81,6 +81,9 @@
         });
         function redirectToEvent() {
             window.location.href = '../Events/event.html'; // Replace with your desired URL
+        }
+        function redirectToBooking() {
+            window.location.href = '../Booking/booking.html'; // Replace with your desired URL
         }        
     </script>
 
