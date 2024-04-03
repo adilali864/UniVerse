@@ -39,7 +39,7 @@
                             <p>Get a list of all the upcoming and ongoing <br>events.</p>
                         </div>
                     </div>
-                    <div class="img-holder">
+                    <div class="img-holder" onclick="redirectToMess()">
                         <img src="../Mess.png" alt="">
                         <div class="overlay">
                             <h3>Mess</h3>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="part2">
-                    <div class="img-holder">
+                    <div class="img-holder" onclick="redirectToLaundry()">
                         <img src="../Laundry.png" alt="">
                         <div class="overlay">
                             <h3>Laundry</h3>
@@ -84,7 +84,13 @@
         }
         function redirectToBooking() {
             window.location.href = '../Booking/booking.html'; // Replace with your desired URL
-        }        
+        }
+        function redirectToMess() {
+            window.location.href = '../MessPage/mess.html'; // Replace with your desired URL
+        }   
+        function redirectToLaundry() {
+            window.location.href = '../LaundryPage/laundry.html'; // Replace with your desired URL
+        }    
     </script>
 
 </body>
