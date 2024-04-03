@@ -30,7 +30,7 @@
             </div>
             <div class="contain-right">
                 <div class="part1">
-                    <div class="img-holder">
+                    <div class="img-holder" onclick="redirectToEvent()">
                         <img src="../events.png" alt="">
                         <div class="overlay">
                             <h3>Events</h3>
@@ -79,6 +79,9 @@
             el: document.querySelector('#main'),
             smooth: true
         });
+        function redirectToEvent() {
+            window.location.href = '../Events/event.html'; // Replace with your desired URL
+        }        
     </script>
 
 </body>
