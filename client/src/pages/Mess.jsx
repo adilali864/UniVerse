@@ -122,13 +122,15 @@ const { currentUser } = useSelector((state) => state.user);
             </div>
 
             {showModal && (
-                <div className="modal">
-                    <div className="modal-content">
+                <div className="modal px-10 py-10 ">
+                    <div className="modal-content flex flex-col items-center gap-2">
                         <span className="close" onClick={handleCloseModal}>&times;</span>
                         <h2>Review {reviewType}</h2>
-                        <form onSubmit={handleSubmitReview}>
+                        <form onSubmit={handleSubmitReview} className="flex flex-col">
+                            <span>
                             <label htmlFor="rating">Rating:</label>
                             <input className='bg-slate-300' type="number" id="rating" name="rating" min="1" max="5" required />
+                            </span>
                             <button type="submit">Submit Review</button>
                         </form>
                     </div>

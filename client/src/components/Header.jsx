@@ -23,26 +23,21 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-teal-750 shadow-md drop-shadow-lg mb-7 h-9'>
-      <div className='flex justify-between items-center max-w-7xl mx-auto p-3'>
+    <header className='bg-teal-750 shadow-md drop-shadow-lg mb-7 '>
+      <div className='flex justify-between items-center max-w-7xl mx-auto py-2'>
         <Link to='/'>
-          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-            <span className='text-teal-50'>Uni</span>
-            <span className='text-teal-200'>Verse</span>
+          <h1 className='logo h-100 cursor-pointer'>
+            <img className="rounded-xl" src="./img/Logo.svg" alt="" />
           </h1>
         </Link>
         
-        <ul className='flex gap-4'>
+        <ul className='flex gap-10'>
           <Link to='/'>
             <li className='hidden sm:inline text-teal-100 hover:underline'>
               Home
             </li>
           </Link>
-          <Link to='/about'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              About
-            </li>
-          </Link>
+          
           <Link to='/laundry'>
             <li className='hidden sm:inline text-teal-100 hover:underline'>
               Laundry
@@ -66,8 +61,13 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className=' text-teal-100 hover:underline'> Sign in</li>
             )}
+          </Link>
+          <Link to='/about'>
+            <li className='hidden sm:inline text-teal-100 hover:underline'>
+              Team
+            </li>
           </Link>
         </ul>
       </div>

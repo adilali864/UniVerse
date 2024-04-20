@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ["/img/Gilroy-Regular.ttf"],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
