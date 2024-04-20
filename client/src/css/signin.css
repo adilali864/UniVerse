@@ -1,0 +1,45 @@
+.main{
+    height: 70vh;
+    width: 50vw;
+    /* background-color: red; */
+    padding: 2vh 10vh;
+}
+.input{
+    width: 38vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vh;
+    margin-bottom: 2vh;
+    /* background-color: red; */
+    /* padding: 0 0 0 3vh; */
+}
+.input input{
+    width: 100%;
+    transition: all ease .5s;
+    border-color: #6ea99f;
+}
+.input input:hover{
+    border-radius: 20px;
+    border-color: #0a908d;
+}
+.main input::placeholder{
+    color: #6ea99f;
+}
+.signinbtn{
+    border: 1px solid #6ea99f;
+    border-radius: 10px;
+    transition: all ease 0.5s;
+}
+.signinbtn:hover{
+    border: 1px solid #ffb64b;
+    border-radius: 20px;
+    color: #ffb64b;
+}
+.signupbtn{
+    transition: all ease 0.5s;
+}
+.signupbtn:hover{
+    color: #ffb64b;
+}

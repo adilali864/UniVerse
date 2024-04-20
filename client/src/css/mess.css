@@ -32,7 +32,10 @@ body,html {
 
 
 #heading{
-    padding: 4vh 8vh;
+    padding: 1vh 8vh;
+}
+#heading h1{
+    font-size: 8vh;
 }
 
 #menuContainer{
@@ -88,4 +91,16 @@ body,html {
 }
 .menu li:nth-child(1){
     margin-top: 2vh;
+}
+.modal{
+    font-size: 3vh;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.submit:hover{
+    color: #ffb64b;
+    transition: all ease 0.5s;
 }

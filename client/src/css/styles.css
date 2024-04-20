@@ -15,45 +15,6 @@ body,html {
     width: 100%;
 }
 
-nav {
-    height: 12vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4vh 8vh;
-}
-
-.logo img {
-    height: 80%;
-    width: 20%;
-    border-radius: 50px;
-}
-
-.nav-right {
-    height: 100%;
-    width: 45%;
-    /* background-color: red; */
-    display: flex;
-    align-self: center;
-    justify-content: space-between;
-}
-
-.nav-right a {
-    font-size: 2vh;
-    font-weight: 400;
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 1vh;
-    border-radius: 20px;
-    color: #6ea99f;
-    transition: all ease 0.4s;
-}
-
-.nav-right a:hover {
-    border: 1px solid #ffb64b;
-    color: #ffb64b;
-}
 
 #main {
     background-color: #042f2e;
@@ -76,15 +37,16 @@ nav {
 .contain-left h1{
     font-size: 15vh;
     font-weight: 600;
+    transition: color 1s ease, text-shadow 1.2s ease;
 }
 .contain-left h2{
     font-size: 7vh;
     font-weight: 400;
+    transition: color 1s ease, text-shadow 1.2s ease;
 }
 .contain-left h1:hover, .contain-left h2:hover{
     color: #ffb64b;
     text-shadow: 0 0 5px #ffb64b;
-    transition: color 1s ease, text-shadow 1.2s ease;
 }
 
 .contain-right {

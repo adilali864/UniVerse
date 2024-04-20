@@ -69,7 +69,7 @@ nav {
     gap: 3vh
 }
 #contain-left h1{
-    font-size: 5.5vh;
+    font-size: 4.7vh;
     font-weight: 700;
     transition: all ease 1s, text-shadow 1.2s ease;
 }
@@ -89,7 +89,7 @@ nav {
     transition: all ease 1s;
 }
 #contain-left h1:hover{
-    font-size: 6vh;
+    font-size: 5vh;
     text-shadow: 0 0 5px #6ea99f;
 }
 #contain-left h2:hover{

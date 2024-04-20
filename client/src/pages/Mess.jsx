@@ -127,11 +127,11 @@ const { currentUser } = useSelector((state) => state.user);
                         <span className="close" onClick={handleCloseModal}>&times;</span>
                         <h2>Review {reviewType}</h2>
                         <form onSubmit={handleSubmitReview} className="flex flex-col">
-                            <span>
+                            <div className="rating">
                             <label htmlFor="rating">Rating:</label>
                             <input className='bg-slate-300' type="number" id="rating" name="rating" min="1" max="5" required />
-                            </span>
-                            <button type="submit">Submit Review</button>
+                            </div>
+                            <button className="submit" type="submit">Submit Review</button>
                         </form>
                     </div>
                 </div>
