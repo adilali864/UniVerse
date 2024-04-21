@@ -5,7 +5,7 @@
     padding: 2vh 10vh;
 }
 .input{
-    width: 38vw;
+    width: 40.5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,5 +41,6 @@
     transition: all ease 0.5s;
 }
 .signinbtn:hover{
+    border: none;
     color: #ffb64b;
 }

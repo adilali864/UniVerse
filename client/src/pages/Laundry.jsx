@@ -174,6 +174,7 @@ export default function CreateListing() {
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
       </h1>
+      <div className="mainForm bg-red-500 h-full w-full">
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
           <input
@@ -209,7 +210,7 @@ export default function CreateListing() {
             {/* Other input fields for clothes */}
           </div>
         </div>
-        <div className='flex flex-col flex-1 gap-4'>
+        <div className='images flex flex-col flex-1 gap-4'>
           <p className='font-semibold'>
             Images:
             <span className='font-normal text-gray-600 ml-2'>
@@ -266,6 +267,7 @@ export default function CreateListing() {
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
       </form>
+      </div>
       {/* PDFDownloadLink for downloading the slip */}
       <PDFDownloadLink document={generateSlip()} fileName="Laundry_Slip.pdf">
         {({ blob, url, loading, error }) =>

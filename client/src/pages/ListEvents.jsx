@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../firebase';
+import "../css/listevent.css"
 
 export default function ListEvents() {
     const { currentUser } = useSelector((state) => state.user);
@@ -118,64 +119,64 @@ export default function ListEvents() {
     };
 
     return (
-      <div id="main" className="font-sans">
-          <div id="heading" className="text-center my-8">
+      <div id="main1" className="font-sans">
+          <div id="heading1" className="text-center my-8">
               <h1 className="text-3xl font-bold">Upcoming and Ongoing Events</h1>
           </div>
           <form onSubmit={handleSubmit}>
               <div className="flex flex-wrap justify-center">
-                  <div className="eventContainer max-w-sm rounded overflow-hidden shadow-lg m-4">
-                      <div className="infoContainer p-4">
+                  <div className="eventContainer1 max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl m-4">
+                      <div className="infoContainer1 p-4">
                           <div className="mb-4">
-                              <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Event Name</label>
+                              <label htmlFor="name" className="block text-[#6ea99f] font-bold mb-2">Event Name</label>
                               <input
                                   type="text"
                                   id="name"
                                   name="name"
                                   value={formData.name}
                                   onChange={handleChange}
-                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 placeholder:text-[#6ea99f] leading-tight focus:outline-none focus:shadow-outline"
                                   placeholder="Enter event name"
                               />
                           </div>
                           <div className="mb-4">
-                              <label htmlFor="description" className="block text-gray-700 font-bold mb-2">Description</label>
+                              <label htmlFor="description1" className="block text-[#6ea99f] font-bold mb-2">Description</label>
                               <textarea
                                   id="description"
                                   name="description"
                                   value={formData.description}
                                   onChange={handleChange}
-                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 placeholder:text-[#6ea99f] leading-tight focus:outline-none focus:shadow-outline"
                                   placeholder="Enter event description"
                                   rows="4"
                               />
                           </div>
                           <div className="mb-4">
-                              <label htmlFor="date" className="block text-gray-700 font-bold mb-2">Date</label>
+                              <label htmlFor="date" className="block text-[#6ea99f] font-bold mb-2">Date</label>
                               <input
                                   type="date"
                                   id="date"
                                   name="date"
                                   value={formData.date}
                                   onChange={handleChange}
-                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 placeholder:text-[#6ea99f] leading-tight focus:outline-none focus:shadow-outline"
                               />
                           </div>
                           <div className="mb-4">
-                              <label htmlFor="venue" className="block text-gray-700 font-bold mb-2">Venue</label>
+                              <label htmlFor="venue" className="block text-[#6ea99f] font-bold mb-2">Venue</label>
                               <input
                                   type="text"
                                   id="venue"
                                   name="venue"
                                   value={formData.venue}
                                   onChange={handleChange}
-                                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+                                  className="shadow appearance-none border rounded w-full py-2 px-3 placeholder:text-[#6ea99f] leading-tight focus:outline-none focus:shadow-outline mb-4"
                                   placeholder="Enter event venue"
                               />
                               
                               <p className='font-semibold mb-3'>
                                   Images:
-                                  <span className='font-normal text-gray-600 ml-2'>
+                                  <span className='font-normal text-[#6ea99f]  ml-2'>
                                       The first image will be the cover (max 6)
                                   </span>
                               </p>

@@ -44,7 +44,7 @@ export default function SignIn() {
     }
   };
   return (
-    <div className='main  mx-auto'>
+    <div className='main mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <div className='input'>
@@ -66,7 +66,7 @@ export default function SignIn() {
 
         <button
           disabled={loading}
-          className='signinbtn p-3 uppercase '
+          className='signinbtn p-3 uppercase'
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>

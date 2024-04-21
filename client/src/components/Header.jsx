@@ -53,6 +53,11 @@ export default function Header() {
               Events
             </li>
           </Link>
+          <Link to='/about'>
+            <li className='hidden sm:inline text-teal-100 hover:underline'>
+              Team
+            </li>
+          </Link>
           <Link to='/profile'>
             {currentUser ? (
               <img
@@ -63,11 +68,6 @@ export default function Header() {
             ) : (
               <li className=' text-teal-100 hover:underline'> Sign in</li>
             )}
-          </Link>
-          <Link to='/about'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Team
-            </li>
           </Link>
         </ul>
       </div>
