@@ -1,75 +1,98 @@
-import { FaSearch } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { FaSearch } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('searchTerm', searchTerm);
-    const searchQuery = urlParams.toString();
-    navigate(`/search?${searchQuery}`);
+    // urlParams.set('searchTerm', searchTerm);
+    // const searchQuery = urlParams.toString();
+    // navigate(`/search?${searchQuery}`);
   };
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get('searchTerm');
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [location.search]);
   return (
-    <header className='bg-teal-750 shadow-md drop-shadow-lg mb-7 '>
-      <div className='flex justify-between items-center max-w-7xl mx-auto py-2'>
-        <Link to='/'>
-          <h1 className='logo h-100 cursor-pointer'>
-            <img className="rounded-xl" src="./img/Logo.svg" alt="" />
-          </h1>
+    <header className={`floating-navbar ${isScrolled ? "scrolled" : ""}`}>
+      <div className="navbar-container">
+        {/* Logo Section */}
+        <Link to="/" className="logo-section">
+          <img className="logo-image" src="./img/logo.png" alt="UniVerse" />
+          <span className="logo-text">UniVerse</span>
         </Link>
-        
-        <ul className='flex gap-10'>
-          <Link to='/'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Home
-            </li>
+
+        {/* Search Bar */}
+        <form onSubmit={handleSubmit} className="search-container">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search-input"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="submit" className="search-button">
+            <FaSearch className="search-icon" />
+          </button>
+        </form>
+
+        {/* Navigation Links */}
+        <nav className="nav-links">
+          <Link to="/" className="nav-link">
+            <span>Home</span>
           </Link>
-          
-          <Link to='/laundry'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Laundry
-            </li>
+          <Link to="/events" className="nav-link">
+            <span>Events</span>
           </Link>
-          <Link to='/mess'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Mess
-            </li>
+          <Link to="/laundry" className="nav-link">
+            <span>Laundry</span>
           </Link>
-          <Link to='/events'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Events
-            </li>
+          <Link to="/mess" className="nav-link">
+            <span>Mess</span>
           </Link>
-          <Link to='/about'>
-            <li className='hidden sm:inline text-teal-100 hover:underline'>
-              Team
-            </li>
+          <Link to="/about" className="nav-link">
+            <span>About</span>
           </Link>
-          <Link to='/profile'>
+
+          {/* Profile/Auth Section */}
+          <div className="auth-section">
             {currentUser ? (
-              <img
-                className='rounded-full h-7 w-7 object-cover'
-                src={currentUser.avatar}
-                alt='profile'
-              />
+              <Link to="/profile" className="profile-link">
+                <img
+                  className="profile-avatar"
+                  src={currentUser.avatar}
+                  alt="profile"
+                />
+                <span className="profile-name">{currentUser.username}</span>
+              </Link>
             ) : (
-              <li className=' text-teal-100 hover:underline'> Sign in</li>
+              <div className="auth-buttons">
+                <Link to="/sign-in" className="auth-button signin">
+                  Sign In
+                </Link>
+              </div>
             )}
-          </Link>
-        </ul>
+          </div>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button className="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
   );

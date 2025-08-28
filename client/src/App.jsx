@@ -8,7 +8,6 @@ import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
 import CreateListing from './pages/CreateListing';
 import ListEvents from './pages/ListEvents';
-import Contact from './components/Contact';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
@@ -18,30 +17,32 @@ import Events from './pages/Events';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/contact' element={<Contact />} />
-         <Route path='/laundry' element={<CreateListing />} /> 
-        <Route path='/mess' element={<Mess />} />
-        { <Route path='/events' element={<Events />} /> }
-        <Route path='/listing/:listingId' element={<Listing />} />
+    <div className="app-container">
+      <BrowserRouter>
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/sign-in' element={<SignIn />} />
+            <Route path='/sign-up' element={<SignUp />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/search' element={<Search />} />
+            <Route path='/laundry' element={<Laundry />} /> 
+            <Route path='/mess' element={<Mess />} />
+            <Route path='/events' element={<Events />} />
+            <Route path='/listing/:listingId' element={<Listing />} />
 
-
-        <Route element={<PrivateRoute />}>
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/list-events' element={<ListEvents />} />
-          <Route
-            path='/update-listing/:listingId'
-            element={<UpdateListing />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            <Route element={<PrivateRoute />}>
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/list-events' element={<ListEvents />} />
+              <Route
+                path='/update-listing/:listingId'
+                element={<UpdateListing />}
+              />
+            </Route>
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </div>
   );
 }

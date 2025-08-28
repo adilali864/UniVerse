@@ -1,0 +1,34 @@
+Diksha & Dijkstra: A Data-Driven Love Story That Didn’t Compile
+
+1. Both follow the shortest path – no unnecessary detours.
+Just like Dijkstra’s Algorithm finds the shortest path to a destination without wasting time on irrelevant nodes, Diksha doesn’t entertain distractions — especially not romantic ones when she’s laser-focused on her goals.
+💡 Your friend? Probably not the shortest path to her definition of “success.”
+
+2. They both prioritize.
+Dijkstra uses a priority queue to decide the next best node.
+Diksha uses her mental priority queue to decide what’s most important — and right now, it’s her GPA, not your buddy’s feelings.
+📚 > 💌
+
+3. No cycles, just progress.
+Dijkstra avoids cycles to stay efficient.
+Diksha avoids emotional loops — no mixed signals, no drama — just a clean, O(n log n) lifestyle.
+🌀 Emotions? Nah. She's all about acyclic clarity.
+
+4. They’re both deterministic.
+Given the same input, Dijkstra always gives the same output.
+Similarly, once Diksha said “no,” she meant it. No random behavior, no false hope — just pure algorithmic consistency.
+
+5. They're optimal — not emotional.
+Dijkstra's Algorithm always finds the most optimal path, and Diksha is all about optimizing her life: whether it’s coding, internships, or avoiding unnecessary “crush complications.”
+
+6. Final similarity?
+Once the algorithm has found the shortest path… it never revisits old nodes.
+Diksha, too, moves forward — no looking back at rejections or proposals.
+Your friend? Still stuck in a while loop of hope.
+
+Moral of the Story:
+
+Tell your friend he just encountered a real-world Dijkstra — efficient, intelligent, and focused.
+He was just a node with a high cost — not her optimal path 😅
+
+But hey, just like in DSA, there are many algorithms for different kinds of graphs. Maybe he needs a Depth-First Search next — someone who explores a bit deeper before deciding 😉

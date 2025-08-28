@@ -7,7 +7,6 @@ import {
   signInFailure,
 } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
-import '../css/signin.css'
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -44,10 +43,9 @@ export default function SignIn() {
     }
   };
   return (
-    <div className='main mx-auto'>
+    <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-        <div className='input'>
         <input
           type='email'
           placeholder='email'
@@ -62,11 +60,10 @@ export default function SignIn() {
           id='password'
           onChange={handleChange}
         />
-        </div>
 
         <button
           disabled={loading}
-          className='signinbtn p-3 uppercase'
+          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>
@@ -75,7 +72,7 @@ export default function SignIn() {
       <div className='flex gap-2 mt-5'>
         <p>Dont have an account?</p>
         <Link to={'/sign-up'}>
-          <span className='signupbtn text-blue-700'>Sign up</span>
+          <span className='text-blue-700'>Sign up</span>
         </Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
